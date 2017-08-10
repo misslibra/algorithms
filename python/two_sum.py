@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # encoding: utf-8
-# author: pyclearl
+# author: cappyclearl
 
 class Solution:
     def twoSum(self, nums, target):

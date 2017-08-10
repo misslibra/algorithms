@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
-# author: pyclearl
+# author: cappyclearl
 
 class Solution(object):
     x_min = -2147483648
