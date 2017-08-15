@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 # author: cappyclearl
-# TODO have bug
 
 
 class Solution(object):
@@ -10,11 +9,13 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        if len(s) is 0:
+            return len(s)
         char_position = dict()
         pre_arr = []
         for i, _ in enumerate(s):
             last_post_of_char = char_position.get(s[i])
-            if not last_post_of_char:
+            if last_post_of_char is None:
                 pre_arr.append(1 if i == 0 else pre_arr[i - 1] + 1)
                 char_position[s[i]] = i
             else:
@@ -26,9 +27,12 @@ class Solution(object):
                 else:
                     pre_arr.append(i - b_pos + 1)
                 char_position[s[i]] = i
-        maxlen = max(pre_arr)
-        return maxlen
+        return max(pre_arr)
 
 
 if __name__ == '__main__':
-    pass
+    s = Solution()
+    assert s.lengthOfLongestSubstring('bbbbbb') == 1
+    assert s.lengthOfLongestSubstring('') == 0
+    assert s.lengthOfLongestSubstring('abcabcbb') == 3
+    assert s.lengthOfLongestSubstring('pwwkew') == 3
