@@ -38,4 +38,4 @@ if __name__ == '__main__':
         "review": "rating"}
     s = Solution()
     assert s.judge("movie visible", "film show")
-    assert s.judge("book review", "movie rating")
+    assert not s.judge("book review", "movie rating")
