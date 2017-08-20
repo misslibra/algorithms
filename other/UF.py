@@ -4,17 +4,28 @@
 
 
 class Solution:
+    """
+       字符串相似程度判断
+    """
     def __init__(self, maps):
         self.maps = maps
         # 还没想清该怎么处理
-        # self.count = len(maps) * 2
-        # self._id = [i for i in range(self.count)]
+        # self.count = None
+        # self._map = {}
 
     def union(self, p, q):
-        pass
+        p_map = self.find(p)
+        q_map = self.find(q)
+        if p_map == q_map:
+            return
+
+        for i in self._map.keys():
+            if self._map[i] == p_map:
+                self._map[i] = q_map
+        self.count -= 1
 
     def find(self, p):
-        pass
+        return self._map[p]
 
     def connected(self, p, q):
         return self.find(p) == self.find(q)
@@ -35,7 +46,8 @@ if __name__ == '__main__':
         "movie": "film",
         "book": "note",
         "film": "show",
-        "review": "rating"}
+        "review": "rating"
+    }
     s = Solution()
     assert s.judge("movie visible", "film show")
     assert not s.judge("book review", "movie rating")
