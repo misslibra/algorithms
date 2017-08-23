@@ -6,10 +6,11 @@
 class Solution:
     """
        字符串相似程度判断
+       转化为连通性问题
     """
     def __init__(self, maps):
         self.maps = maps
-        # 还没想清该怎么处理
+        # 还没想清数据结构怎么处理
         # self.count = None
         # self._map = {}
 
