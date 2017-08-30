@@ -3,10 +3,11 @@
 # author: cappyclearl
 
 
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+#class ListNode(object):
+#    def __init__(self, x):
+#        self.val = x
+#        self.next = None
+# leetcode这里要注释掉才能ac
 
 
 class Solution(object):
