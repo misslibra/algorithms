@@ -21,16 +21,19 @@ class Solution(object):
         """
         p, q = l1, l2
         result = curr = ListNode(0)
-        while (p is not None) and (q is not None):
-            val_p = p.val if p.val else 0
-            val_q = q.val if q.val else 0
+        while (p is not None) or (q is not None):
+            val_p = p.val if p is not None else 0
+            val_q = q.val if q is not None else 0
             _sum = self.carry + val_p + val_q
             self.carry = _sum / 10
             curr.next = ListNode(_sum % 10)
             curr = curr.next
-            p = p.next
-            q = q.next
-
+            if p is not None:
+                p = p.next
+            if q is not None:
+                q = q.next
+        if self.carry > 0:
+            curr.next = ListNode(self.carry)
         return result.next
 
 
