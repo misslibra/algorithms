@@ -21,7 +21,6 @@ Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 低买高卖，数组是每天价格，卖必须先买，只允许一次买卖，要得到最大利润。
-动态规划
 """
 
 
@@ -46,6 +45,7 @@ class Solution:
 
         # 这种做法是基于一个规律的，想像这些点是y轴的坐标点
         # 那么俩点间的距离可以由两点间包含的各个点两两之差的和构成
+        # 于是最大的利润是距离最大的两点
         max_ = 0
         l = len(prices)
         tmp = 0
