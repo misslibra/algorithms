@@ -33,6 +33,10 @@ class Solution:
         >>> s = Solution()
         >>> test1 = [7,1,5,3,6,4]
         >>> test2 = [7,6,4,3,1]
+        >>> s.maxProfit(test1)
+        5
+        >>> s.maxProfit(test2)
+        0
         """
         # 这种解法是很自然的Python程序员做法
         # min_index = prices.index(min(prices))
