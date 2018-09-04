@@ -44,7 +44,12 @@ class Solution:
                 return False
         else:
             return False
-        # 最简单的做法其实是return sorted(s) == sroted(t)
+        # 最简单的做法其实是
+        # return sorted(s) == sroted(t)
+        # 改进做法, 超过了50%
+        # return set(s) == set(t) and sum(ord(i) for i in s) == sum(ord(i) for i in t)
+        # 再快点,这个超过了80%的Python3写法
+        # return bool(Counter(s) == Counter(t))
 
 
 if __name__ == '__main__':
