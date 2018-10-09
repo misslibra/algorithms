@@ -41,7 +41,7 @@ class Solution:
 
         """
         # 这题对Python来说一句搞定,而且还符合直觉
-        # return len(nums) == len(set(nums)):
+        # return len(nums) != len(set(nums))
 
         # 下面的还花了下脑子。。
         is_duplicate = False
